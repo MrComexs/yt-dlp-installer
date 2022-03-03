@@ -7,14 +7,14 @@ set /P INPUT=Type input: %=%
 echo.
 If /I "%INPUT%"=="f" goto folder
 If /I "%INPUT%"=="e" goto exit
-
-%UserProfile%\Videos\yt-dlp\yt-dlp-program-files\yt-dlp.exe  %INPUT% -o %UserProfile%\Videos\yt-dlp\%%(title)s.%%(ext)s
+::you can change the output in the next line (11)
+"%~dp0\yt-dlp.exe"  %INPUT% -o %UserProfile%\Videos\yt-dlp\%%(title)s.%%(ext)s
 echo.
 goto start
 
 :folder
-    cd %UserProfile%\Videos\yt-dlp\yt-dlp-program-files\
-    start %UserProfile%\Videos\yt-dlp\yt-dlp-program-files\.
+    cd %UserProfile%\Videos\yt-dlp\
+    start %UserProfile%\Videos\yt-dlp\.
     exit
 
 :exit
